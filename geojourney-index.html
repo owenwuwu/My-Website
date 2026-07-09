@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>宗淮的地理筆記 | Maps, Earth Science & Travel</title>
+  <style>
+    :root {
+      --bg: #f7f3ea;
+      --text: #26332f;
+      --muted: #66736d;
+      --primary: #2f6f5e;
+      --secondary: #2f5f8f;
+      --card: #ffffff;
+      --line: #ddd5c7;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Noto Sans TC", "Microsoft JhengHei", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    header {
+      min-height: 72vh;
+      background:
+        linear-gradient(rgba(20, 40, 35, 0.55), rgba(20, 40, 35, 0.55)),
+        url("images/hero.jpg");
+      background-size: cover;
+      background-position: center;
+      color: white;
+      display: flex;
+      flex-direction: column;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 8%;
+      background: rgba(0, 0, 0, 0.25);
+      backdrop-filter: blur(6px);
+    }
+
+    nav .logo {
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 20px;
+      font-size: 0.95rem;
+    }
+
+    .hero {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 0 8%;
+      max-width: 950px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.3rem, 6vw, 5rem);
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 1.25rem;
+      max-width: 680px;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 24px;
+      padding: 12px 22px;
+      border-radius: 999px;
+      background: var(--primary);
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    main {
+      width: min(1120px, 88%);
+      margin: 0 auto;
+      padding: 64px 0;
+    }
+
+    section {
+      margin-bottom: 72px;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      margin-bottom: 12px;
+      color: var(--primary);
+    }
+
+    .section-desc {
+      color: var(--muted);
+      margin-bottom: 28px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+    }
+
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      background: #d8d2c4;
+    }
+
+    .card-body {
+      padding: 20px;
+    }
+
+    .tag {
+      display: inline-block;
+      font-size: 0.8rem;
+      color: white;
+      background: var(--secondary);
+      padding: 4px 10px;
+      border-radius: 999px;
+      margin-bottom: 10px;
+    }
+
+    .map-box {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 18px;
+    }
+
+    iframe {
+      width: 100%;
+      height: 420px;
+      border: 0;
+      border-radius: 14px;
+      background: #ddd;
+    }
+
+    .article-list {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 24px;
+    }
+
+    .article-item {
+      padding: 16px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .article-item:last-child {
+      border-bottom: none;
+    }
+
+    .article-item h3 {
+      margin: 0 0 6px;
+    }
+
+    .article-item p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    footer {
+      background: #20342e;
+      color: white;
+      padding: 36px 8%;
+      text-align: center;
+    }
+
+    @media (max-width: 720px) {
+      nav {
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      nav a {
+        margin: 0 8px;
+      }
+
+      header {
+        min-height: 64vh;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav>
+      <div class="logo">GeoJourney Notes</div>
+      <div>
+        <a href="#maps">地圖作品</a>
+        <a href="#earth">地球科學</a>
+        <a href="#travel">旅行</a>
+        <a href="#research">研究</a>
+        <a href="#about">關於我</a>
+      </div>
+    </nav>
+
+    <div class="hero">
+      <h1>用地圖認識世界，<br>用旅行理解地球。</h1>
+      <p>
+        這是一個結合地理、地球科學、觀光旅遊與地圖作品的個人網站。
+        內容包含 GMT / QGIS 地圖、InSAR 研究成果、地景觀察、旅遊紀錄與照片。
+      </p>
+      <a class="btn" href="#maps">探索地圖作品</a>
+    </div>
+  </header>
+
+  <main>
+    <section id="maps">
+      <h2 class="section-title">地圖作品 Maps</h2>
+      <p class="section-desc">展示 GMT、QGIS、InSAR、地震分布與旅遊路線等地圖作品。</p>
+
+      <div class="grid">
+        <article class="card">
+          <img src="images/map-insar.jpg" alt="InSAR 地圖">
+          <div class="card-body">
+            <span class="tag">InSAR</span>
+            <h3>台灣西南部地表變形圖</h3>
+            <p>以 Sentinel-1 InSAR 資料呈現地表位移與地下水變化關係。</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="images/map-earthquake.jpg" alt="地震地圖">
+          <div class="card-body">
+            <span class="tag">GMT</span>
+            <h3>台灣地震分布圖</h3>
+            <p>使用 GMT 繪製地震震央、規模與地形背景。</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="images/map-travel.jpg" alt="旅行地圖">
+          <div class="card-body">
+            <span class="tag">Travel Map</span>
+            <h3>旅行地理觀察地圖</h3>
+            <p>紀錄旅行路線、景點位置與地理觀察筆記。</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-title">互動地圖 Interactive Map</h2>
+      <p class="section-desc">可以嵌入 Google My Maps、OpenStreetMap 或 Leaflet 地圖。</p>
+
+      <div class="map-box">
+        <!-- 將下方 iframe src 換成你的 Google My Maps 嵌入連結 -->
+        <iframe src="https://www.google.com/maps/embed?pb=" title="Interactive Map"></iframe>
+      </div>
+    </section>
+
+    <section id="earth">
+      <h2 class="section-title">地球科學 Earth Science</h2>
+      <p class="section-desc">整理 InSAR、GNSS、地震、地形、地下水與遙測相關筆記。</p>
+
+      <div class="article-list">
+        <div class="article-item">
+          <h3>SBAS-InSAR 原理簡介</h3>
+          <p>介紹時間序列 InSAR 如何分析地表變形。</p>
+        </div>
+        <div class="article-item">
+          <h3>地下水與地層下陷</h3>
+          <p>說明地下水抽取、壓密與地表變形之間的關係。</p>
+        </div>
+        <div class="article-item">
+          <h3>GMT 地圖繪製筆記</h3>
+          <p>紀錄 GMT 繪圖常用指令與錯誤排除。</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="travel">
+      <h2 class="section-title">旅行與地理觀察 Travel Geography</h2>
+      <p class="section-desc">以地理和地球科學角度記錄旅行中的地景、城市與自然環境。</p>
+
+      <div class="grid">
+        <article class="card">
+          <img src="images/travel-taiwan.jpg" alt="台灣旅行">
+          <div class="card-body">
+            <span class="tag">Taiwan</span>
+            <h3>台灣地景觀察</h3>
+            <p>海岸、山脈、河流、聚落與地質景觀紀錄。</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="images/travel-japan.jpg" alt="日本旅行">
+          <div class="card-body">
+            <span class="tag">Japan</span>
+            <h3>日本火山與城市旅行</h3>
+            <p>火山地形、溫泉、鐵道與城市地理觀察。</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="research">
+      <h2 class="section-title">研究成果 Research</h2>
+      <p class="section-desc">放置研討會海報、論文摘要、地圖成果、程式碼與資料連結。</p>
+
+      <div class="grid">
+        <article class="card">
+          <img src="images/research-poster.jpg" alt="研究海報">
+          <div class="card-body">
+            <span class="tag">Poster</span>
+            <h3>InSAR 與乾旱事件研究</h3>
+            <p>利用 InSAR 與現地資料分析乾旱事件對地表變形的影響。</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="images/research-code.jpg" alt="程式碼">
+          <div class="card-body">
+            <span class="tag">Code</span>
+            <h3>GMT / Python 程式碼</h3>
+            <p>整理地圖製作、HDF5 讀取與資料視覺化程式。</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="about">
+      <h2 class="section-title">關於我 About</h2>
+      <p>
+        我對地理、地球科學、地圖製作與旅遊觀察有興趣。
+        這個網站用來整理研究成果、地圖作品、旅行紀錄與學習筆記。
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 GeoJourney Notes. Built with GitHub Pages.</p>
+  </footer>
+</body>
+</html>
